@@ -1,7 +1,9 @@
 package org.example;
 
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.temporal.TemporalAdjusters;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
@@ -11,7 +13,7 @@ import java.util.TreeSet;
 public class Main {
     public static void main(String[] args) {
 
-        LocalDateTime start = LocalDateTime.now();
+       /* LocalDateTime start = LocalDateTime.now();
         LocalDateTime end = start.plusMinutes(10);
 
         System.out.println("Start: " + start);
@@ -44,6 +46,15 @@ public class Main {
             }
         }
 
-        System.out.println("End: " + LocalDateTime.now());
+        System.out.println("End: " + LocalDateTime.now());*/
+
+        // Получаем текущую дату
+        LocalDateTime currentDate = LocalDateTime.now();
+
+        // Получаем последний день текущего месяца
+        LocalDateTime lastDayOfMonth = currentDate.with(TemporalAdjusters.lastDayOfMonth());
+
+        // Выводим последний день месяца
+        System.out.println("Последний день текущего месяца: " + lastDayOfMonth);
     }
 }
